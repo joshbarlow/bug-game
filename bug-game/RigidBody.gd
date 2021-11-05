@@ -4,15 +4,17 @@ export var speed = 2
 var dir = get_transform().basis.y
 
 var timer = null
-var flapDelay = 0.5
+var timer2 = null
+var flapDelay = 0.2
 var canFlap = true
 
 func get_input(delta):
 	##velocity = Vector3.ZERO
 	if (Input.is_action_pressed("ui_accept") && canFlap):
-		dir = get_transform().basis.y * 400
-		add_central_force(dir)
+		#dir = get_transform().basis.y * 400
+		#add_central_force(dir)
 		canFlap = false
+		get_node("butterfly_anim/AnimationPlayer").play("Animation")
 		timer.start()
 	if Input.is_action_pressed("ui_right"):
 		add_torque(Vector3(0,0,-10))
@@ -29,7 +31,19 @@ func _ready():
 	timer.set_wait_time(flapDelay)
 	timer.connect('timeout',self,"on_timer_complete")
 	add_child(timer)
+	timer2 = Timer.new()
+	timer2.set_one_shot(true)
+	timer2.set_wait_time(0.3)
+	timer2.connect('timeout',self,"on_timer_2_complete")
+	add_child(timer2)
+	
 func on_timer_complete():
+	dir = get_transform().basis.y * 400
+	add_central_force(dir)
+	timer2.start()
+	#canFlap = true
+
+func on_timer_2_complete():
 	canFlap = true
 
 func _process(delta):
