@@ -1,30 +1,26 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Camera.gd" type="Script" id=1]
 [ext_resource path="res://RigidBody.gd" type="Script" id=2]
 [ext_resource path="res://butterfly_2.tscn" type="PackedScene" id=3]
+[ext_resource path="res://models/uv_checker_shader.tres" type="Material" id=4]
 
-[sub_resource type="BoxShape" id=14]
+[sub_resource type="BoxShape" id=1]
 
-[sub_resource type="QuadMesh" id=5]
+[sub_resource type="QuadMesh" id=2]
 
-[sub_resource type="Shader" id=6]
-
-[sub_resource type="ShaderMaterial" id=7]
-shader = SubResource( 6 )
-
-[sub_resource type="BoxShape" id=8]
+[sub_resource type="BoxShape" id=5]
 extents = Vector3( 20.9563, 1, 14.0008 )
 
-[sub_resource type="QuadMesh" id=9]
+[sub_resource type="QuadMesh" id=6]
 
-[sub_resource type="CubeMesh" id=10]
+[sub_resource type="CubeMesh" id=7]
 
-[sub_resource type="BoxShape" id=11]
+[sub_resource type="BoxShape" id=8]
 
-[sub_resource type="BoxShape" id=12]
+[sub_resource type="BoxShape" id=9]
 
-[sub_resource type="BakedLightmapData" id=13]
+[sub_resource type="BakedLightmapData" id=10]
 
 [node name="Spatial" type="Spatial"]
 
@@ -34,7 +30,7 @@ script = ExtResource( 2 )
 
 [node name="CollisionShape" type="CollisionShape" parent="RigidBody"]
 transform = Transform( 0.546917, 0, 0, 0, 0.458149, 0, 0, 0, 0.8, 0, 0.0405842, 0 )
-shape = SubResource( 14 )
+shape = SubResource( 1 )
 
 [node name="Position3D" type="Position3D" parent="RigidBody"]
 
@@ -46,12 +42,12 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.486729, 0 )
 [node name="MeshInstance" type="MeshInstance" parent="Floor"]
 transform = Transform( 29.6072, 0, 0, 0, -8.74228e-07, 10, 0, -20, -4.37114e-07, 0, 0, 0 )
 use_in_baked_light = true
-mesh = SubResource( 5 )
-material/0 = SubResource( 7 )
+mesh = SubResource( 2 )
+material/0 = ExtResource( 4 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Floor"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.892954, 0 )
-shape = SubResource( 8 )
+shape = SubResource( 5 )
 
 [node name="Camera" type="Camera" parent="."]
 transform = Transform( 1, 0, 0, 0, 0.894708, 0.446651, 0, -0.446651, 0.894708, 0, 3.53912, 8.00272 )
@@ -67,30 +63,30 @@ shadow_enabled = true
 [node name="back_wall" type="MeshInstance" parent="Objects"]
 transform = Transform( 31.1113, 0, 0, 0, 30.0985, 0, 0, 0, 1, 0, 6.01664, -9.95713 )
 use_in_baked_light = true
-mesh = SubResource( 9 )
-material/0 = null
+mesh = SubResource( 6 )
+material/0 = ExtResource( 4 )
 
 [node name="L_wall" type="MeshInstance" parent="Objects"]
 transform = Transform( 6.16303, 0, 0, 0, 9.05852, 0, 0, 0, 5.68361, -16.9986, 6.7453, -2.63545 )
 use_in_baked_light = true
-mesh = SubResource( 10 )
-material/0 = null
+mesh = SubResource( 7 )
+material/0 = ExtResource( 4 )
 
 [node name="R_wall" type="MeshInstance" parent="Objects"]
 transform = Transform( 6.16303, 0, 0, 0, 9.05852, 0, 0, 0, 5.68361, 17.5066, 6.7453, -2.63545 )
 use_in_baked_light = true
-mesh = SubResource( 10 )
-material/0 = null
+mesh = SubResource( 7 )
+material/0 = ExtResource( 4 )
 
 [node name="R_wall_CollisionShape" type="CollisionShape" parent="Objects"]
 transform = Transform( 6.16303, 0, 0, 0, 9.05852, 0, 0, 0, 5.68361, 17.5066, 6.7453, -2.63545 )
-shape = SubResource( 11 )
+shape = SubResource( 8 )
 
 [node name="L_wall_CollisionShape" type="CollisionShape" parent="Objects"]
 transform = Transform( 6.16303, 0, 0, 0, 9.05852, 0, 0, 0, 5.6836, -16.9986, 6.7453, -2.63545 )
-shape = SubResource( 12 )
+shape = SubResource( 9 )
 
 [node name="BakedLightmap" type="BakedLightmap" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8.985, 0 )
 extents = Vector3( 17.3317, 12.3689, 10.9172 )
-light_data = SubResource( 13 )
+light_data = SubResource( 10 )
