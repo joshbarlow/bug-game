@@ -1,5 +1,5 @@
 # bug-game
-My attempt at finishing a game for the 2021 game off jam
+My attempt at finishing a game for the 2021 [game off](https://itch.io/jam/game-off-2021) jam
 
 Current progress - basic controls working:
 
