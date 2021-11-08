@@ -17,9 +17,9 @@ func get_input(delta):
 		get_node("butterfly_anim/AnimationPlayer").play("Animation")
 		timer.start()
 	if Input.is_action_pressed("ui_right"):
-		add_torque(Vector3(0,0,-10))
+		add_torque(Vector3(0,0,-4))
 	if Input.is_action_pressed("ui_left"):
-		add_torque(Vector3(0,0,10))
+		add_torque(Vector3(0,0,4))
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
