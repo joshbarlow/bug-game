@@ -26,6 +26,7 @@ func _ready():
 	self.set_axis_lock(PhysicsServer.BODY_AXIS_LINEAR_Z, true)
 	self.set_axis_lock(PhysicsServer.BODY_AXIS_ANGULAR_X, true)
 	self.set_axis_lock(PhysicsServer.BODY_AXIS_ANGULAR_Y, true)
+	self.set_angular_damp(1)
 	timer = Timer.new()
 	timer.set_one_shot(true)
 	timer.set_wait_time(flapDelay)
@@ -46,8 +47,13 @@ func on_timer_complete():
 func on_timer_2_complete():
 	canFlap = true
 
+func checkUpsideDown():
+	if (self.transform.basis.y.y < -0.99):
+		get_tree().reload_current_scene()
+	
 func _process(delta):
 	#velocity += gravity * delta
 	get_input(delta)
+	checkUpsideDown()
 	
 	
