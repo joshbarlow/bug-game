@@ -50,7 +50,7 @@ func on_timer_2_complete():
 	canFlap = true
 
 func checkUpsideDown():
-	if (self.transform.basis.y.y < -0.99 && self.get_colliding_bodies()):
+	if (self.transform.basis.y.y < -0.75 && self.get_colliding_bodies()):
 		get_tree().reload_current_scene()
 	
 func _process(delta):
