@@ -27,6 +27,8 @@ func _ready():
 	self.set_axis_lock(PhysicsServer.BODY_AXIS_ANGULAR_X, true)
 	self.set_axis_lock(PhysicsServer.BODY_AXIS_ANGULAR_Y, true)
 	self.set_angular_damp(1)
+	self.set_contact_monitor(true)
+	self.set_max_contacts_reported(1)
 	timer = Timer.new()
 	timer.set_one_shot(true)
 	timer.set_wait_time(flapDelay)
@@ -48,7 +50,7 @@ func on_timer_2_complete():
 	canFlap = true
 
 func checkUpsideDown():
-	if (self.transform.basis.y.y < -0.99):
+	if (self.transform.basis.y.y < -0.99 && self.get_colliding_bodies()):
 		get_tree().reload_current_scene()
 	
 func _process(delta):
