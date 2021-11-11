@@ -8,5 +8,5 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	mothNode = get_node("../ButterflyCharacter/Position3D").get_global_transform()
-	self.translation = (mothNode.origin + Vector3(0,3,6))
+	self.translation = (mothNode.origin + Vector3(0,3,20))
 	pass

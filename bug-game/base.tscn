@@ -1,10 +1,9 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Camera.gd" type="Script" id=1]
 [ext_resource path="res://RigidBody.gd" type="Script" id=2]
 [ext_resource path="res://butterfly_2.tscn" type="PackedScene" id=3]
 [ext_resource path="res://environment.tscn" type="PackedScene" id=4]
-[ext_resource path="res://models/environment_v001.glb" type="PackedScene" id=5]
 
 [sub_resource type="BoxShape" id=1]
 
@@ -12,7 +11,7 @@
 extents = Vector3( 13.3192, 1, 12.3238 )
 
 [sub_resource type="BoxShape" id=12]
-extents = Vector3( 11.5186, 32.572, 10.1391 )
+extents = Vector3( 11.5186, 24.8529, 10.1391 )
 
 [node name="Spatial" type="Spatial"]
 
@@ -30,7 +29,8 @@ shape = SubResource( 1 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.486729, 0 )
 
 [node name="Camera" type="Camera" parent="."]
-transform = Transform( 1, 0, 0, 0, 0.894708, 0.446651, 0, -0.446651, 0.894708, 0, 3.53912, 8.00272 )
+transform = Transform( 1, 0, 0, 0, 0.996194, 0.0871557, 0, -0.0871557, 0.996194, 0, 3.53912, 8.00272 )
+fov = 50.0
 script = ExtResource( 1 )
 
 [node name="DirectionalLight" type="DirectionalLight" parent="."]
@@ -41,17 +41,18 @@ shadow_enabled = true
 
 [node name="environment" type="StaticBody" parent="."]
 
+[node name="environment_v001" parent="environment" instance=ExtResource( 4 )]
+
 [node name="CollisionShape" type="CollisionShape" parent="environment"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.01038, 0 )
 shape = SubResource( 11 )
 
-[node name="environment_v001" parent="environment" instance=ExtResource( 4 )]
-visible = false
-
-[node name="environment_v002" parent="environment" instance=ExtResource( 5 )]
-
 [node name="CollisionShape2" type="CollisionShape" parent="environment"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -23.457, 18.6043, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -29.0674, 25.0351, 0 )
+shape = SubResource( 12 )
+
+[node name="CollisionShape3" type="CollisionShape" parent="environment"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -29.1166, 77.1423, 0 )
 shape = SubResource( 12 )
 
 [node name="OmniLight" type="OmniLight" parent="."]
@@ -87,3 +88,7 @@ text = "TEST 123	"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="BakedLightmap" type="BakedLightmap" parent="."]
+visible = false
+extents = Vector3( 38.5189, 67.6572, 98.1636 )
