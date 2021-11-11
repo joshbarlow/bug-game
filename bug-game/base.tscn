@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Camera.gd" type="Script" id=1]
 [ext_resource path="res://RigidBody.gd" type="Script" id=2]
@@ -8,10 +8,19 @@
 [sub_resource type="BoxShape" id=1]
 
 [sub_resource type="BoxShape" id=11]
-extents = Vector3( 13.3192, 1, 12.3238 )
+extents = Vector3( 11.8645, 14.3793, 12.3238 )
 
 [sub_resource type="BoxShape" id=12]
-extents = Vector3( 11.5186, 24.8529, 10.1391 )
+extents = Vector3( 11.5186, 34.032, 10.1391 )
+
+[sub_resource type="BoxShape" id=13]
+extents = Vector3( 22.596, 3.40204, 9.57497 )
+
+[sub_resource type="BoxShape" id=14]
+extents = Vector3( 5.74886, 46.8493, 2.97075 )
+
+[sub_resource type="BoxShape" id=15]
+extents = Vector3( 0.610339, 2.59218, 8.19935 )
 
 [node name="Spatial" type="Spatial"]
 
@@ -44,16 +53,24 @@ shadow_enabled = true
 [node name="environment_v001" parent="environment" instance=ExtResource( 4 )]
 
 [node name="CollisionShape" type="CollisionShape" parent="environment"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.01038, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.239891, -14.2598, 0 )
 shape = SubResource( 11 )
 
 [node name="CollisionShape2" type="CollisionShape" parent="environment"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -29.0674, 25.0351, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -29.0674, 7.93136, 0 )
 shape = SubResource( 12 )
 
 [node name="CollisionShape3" type="CollisionShape" parent="environment"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -29.1166, 77.1423, 0 )
-shape = SubResource( 12 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -29.2349, 0 )
+shape = SubResource( 13 )
+
+[node name="CollisionShape4" type="CollisionShape" parent="environment"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 24.6915, 19.4064, 0 )
+shape = SubResource( 14 )
+
+[node name="CollisionShape5" type="CollisionShape" parent="environment"]
+transform = Transform( 1, -0.000907571, 0, 0.000907571, 1, 0, 0, 0, 1, -17.8411, 47.5558, 0 )
+shape = SubResource( 15 )
 
 [node name="OmniLight" type="OmniLight" parent="."]
 transform = Transform( 0.967374, -0.109044, 0.228685, -0.0880388, 0.701703, 0.707009, -0.237564, -0.704075, 0.669209, 24.1635, 87.5239, 62.7024 )
