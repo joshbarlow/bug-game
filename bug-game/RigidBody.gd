@@ -26,9 +26,9 @@ func get_input(delta):
 		
 		
 	if Input.is_action_pressed("ui_right"):
-		add_torque(Vector3(0,0,-4))
+		add_torque(Vector3(0,0,-2))
 	if Input.is_action_pressed("ui_left"):
-		add_torque(Vector3(0,0,4))
+		add_torque(Vector3(0,0,2))
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -72,3 +72,5 @@ func _integrate_forces(state):
 		var new_speed = get_linear_velocity().normalized()
 		new_speed *= max_speed * -1
 		set_linear_velocity(new_speed)
+		var floatdir = get_transform().basis.y * Vector3(30,0,0)
+		add_central_force(floatdir)
