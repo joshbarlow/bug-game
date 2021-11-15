@@ -3,10 +3,14 @@ extends RigidBody
 export var speed = 2
 var dir = get_transform().basis.y
 
+var rng = RandomNumberGenerator.new()
+
 var timer = null
 var timer2 = null
 var flapDelay = 0.2
 var canFlap = true
+
+var max_speed = -10
 
 func get_input(delta):
 	##velocity = Vector3.ZERO
@@ -15,7 +19,12 @@ func get_input(delta):
 		#add_central_force(dir)
 		canFlap = false
 		get_node("butterfly_anim/AnimationPlayer").play("Animation")
+		rng.randomize()
+		var my_random_number = rng.randf_range(-10, 10)
+		add_torque(Vector3(0,0,my_random_number))
 		timer.start()
+		
+		
 	if Input.is_action_pressed("ui_right"):
 		add_torque(Vector3(0,0,-4))
 	if Input.is_action_pressed("ui_left"):
@@ -58,4 +67,8 @@ func _process(delta):
 	get_input(delta)
 	checkUpsideDown()
 	
-	
+func _integrate_forces(state):
+	if get_linear_velocity().y < max_speed:
+		var new_speed = get_linear_velocity().normalized()
+		new_speed *= max_speed * -1
+		set_linear_velocity(new_speed)
