@@ -12,7 +12,7 @@ var canFlap = true
 
 var max_speed = -10
 
-func get_input(delta):
+func get_input(_delta):
 	##velocity = Vector3.ZERO
 	if (Input.is_action_pressed("ui_accept") && canFlap):
 		#dir = get_transform().basis.y * 400
@@ -67,7 +67,7 @@ func _process(delta):
 	get_input(delta)
 	checkUpsideDown()
 	
-func _integrate_forces(state):
+func _integrate_forces(_state):
 	if get_linear_velocity().y < max_speed:
 		var new_speed = get_linear_velocity().normalized()
 		new_speed *= max_speed * -1
