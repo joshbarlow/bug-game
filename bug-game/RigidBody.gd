@@ -74,3 +74,7 @@ func _integrate_forces(_state):
 		set_linear_velocity(new_speed)
 		var floatdir = get_transform().basis.y * Vector3(30,0,0)
 		add_central_force(floatdir)
+
+
+func _on_Area_body_entered(body):
+	get_tree().change_scene("res://level_02.tscn")
