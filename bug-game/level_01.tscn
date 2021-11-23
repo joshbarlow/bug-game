@@ -1,30 +1,13 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Camera.gd" type="Script" id=1]
 [ext_resource path="res://RigidBody.gd" type="Script" id=2]
-[ext_resource path="res://environment.tscn" type="PackedScene" id=3]
+[ext_resource path="res://models/level_01.glb" type="PackedScene" id=3]
 [ext_resource path="res://butterfly_2.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Area.gd" type="Script" id=5]
+[ext_resource path="res://level_01_collision.tscn" type="PackedScene" id=6]
 
 [sub_resource type="BoxShape" id=1]
-
-[sub_resource type="BoxShape" id=11]
-extents = Vector3( 11.8645, 14.3793, 12.3238 )
-
-[sub_resource type="BoxShape" id=12]
-extents = Vector3( 11.5186, 37.0818, 10.1391 )
-
-[sub_resource type="BoxShape" id=13]
-extents = Vector3( 22.596, 3.40204, 9.57497 )
-
-[sub_resource type="BoxShape" id=14]
-extents = Vector3( 5.74886, 46.8493, 2.97075 )
-
-[sub_resource type="BoxShape" id=15]
-extents = Vector3( 0.610339, 2.59218, 8.19935 )
-
-[sub_resource type="BoxShape" id=17]
-extents = Vector3( 0.971168, 2.69965, 6.00934 )
 
 [sub_resource type="BoxShape" id=16]
 extents = Vector3( 15.1124, 14.6843, 13.4443 )
@@ -57,31 +40,9 @@ shadow_enabled = true
 
 [node name="environment" type="StaticBody" parent="."]
 
-[node name="environment_v001" parent="environment" instance=ExtResource( 3 )]
+[node name="level_01" parent="environment" instance=ExtResource( 3 )]
 
-[node name="CollisionShape" type="CollisionShape" parent="environment"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.239891, -14.2598, 0 )
-shape = SubResource( 11 )
-
-[node name="CollisionShape2" type="CollisionShape" parent="environment"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -29.0674, 7.93136, 0 )
-shape = SubResource( 12 )
-
-[node name="CollisionShape3" type="CollisionShape" parent="environment"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -29.2349, 0 )
-shape = SubResource( 13 )
-
-[node name="CollisionShape4" type="CollisionShape" parent="environment"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 24.6915, 19.4064, 0 )
-shape = SubResource( 14 )
-
-[node name="CollisionShape5" type="CollisionShape" parent="environment"]
-transform = Transform( 1, -0.000907571, 0, 0.000907571, 1, 0, 0, 0, 1, -17.8411, 47.5558, 0 )
-shape = SubResource( 15 )
-
-[node name="CollisionShape6" type="CollisionShape" parent="environment"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -18.3542, 55.072, 0 )
-shape = SubResource( 17 )
+[node name="level_01_collision" parent="environment" instance=ExtResource( 6 )]
 
 [node name="OmniLight" type="OmniLight" parent="."]
 transform = Transform( 0.967374, -0.109044, 0.228685, -0.0880388, 0.701703, 0.707009, -0.237564, -0.704075, 0.669209, 24.1635, 87.5239, 62.7024 )
@@ -122,7 +83,7 @@ visible = false
 extents = Vector3( 38.5189, 67.6572, 98.1636 )
 
 [node name="Area" type="Area" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -18.4225, 41.8138, 3.05819 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -17.9488, 35.1523, 3.05819 )
 script = ExtResource( 5 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Area"]

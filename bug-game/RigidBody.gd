@@ -20,8 +20,11 @@ func get_input(_delta):
 		canFlap = false
 		get_node("butterfly_anim/AnimationPlayer").play("Animation")
 		rng.randomize()
-		var my_random_number = rng.randf_range(-10, 10)
-		add_torque(Vector3(0,0,my_random_number))
+		
+		## random wobble when flying - maybe makes it too hard/not fun to control
+		
+		#var my_random_number = rng.randf_range(-10, 10)
+		#add_torque(Vector3(0,0,my_random_number))
 		timer.start()
 		
 		
