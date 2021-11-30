@@ -79,5 +79,9 @@ func _integrate_forces(_state):
 		add_central_force(floatdir)
 
 
-func _on_Area_body_entered(body):
+func _on_Area_body_shape_entered_l2(body_rid, body, body_shape_index, local_shape_index):
 	get_tree().change_scene("res://level_03.tscn")
+
+
+func _on_Area_vent_body_shape_entered_l1(body_rid, body, body_shape_index, local_shape_index):
+	get_tree().change_scene("res://level_02.tscn")

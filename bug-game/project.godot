@@ -15,6 +15,12 @@ config/description="2021 Game Off entry - Theme: Bug"
 run/main_scene="res://level_01.tscn"
 config/icon="res://icon.png"
 
+[layer_names]
+
+3d_physics/layer_1="environment"
+3d_physics/layer_2="player"
+3d_physics/layer_3="goals"
+
 [physics]
 
 common/enable_pause_aware_picking=true
