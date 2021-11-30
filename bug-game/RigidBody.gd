@@ -80,4 +80,4 @@ func _integrate_forces(_state):
 
 
 func _on_Area_body_entered(body):
-	get_tree().change_scene("res://level_02.tscn")
+	get_tree().change_scene("res://level_03.tscn")
