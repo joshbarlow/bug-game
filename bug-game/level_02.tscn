@@ -63,25 +63,6 @@ shadow_bias = 0.4
 spot_range = 190.352
 spot_angle = 50.4632
 
-[node name="Control" type="Control" parent="."]
-anchor_left = 0.01
-anchor_top = 0.02
-anchor_right = 2.0
-anchor_bottom = 0.024
-margin_right = 40.0
-margin_bottom = 40.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Label" type="Label" parent="Control"]
-margin_right = 40.0
-margin_bottom = 14.0
-text = "TEST 123	"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
 [node name="Area" type="Area" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 14.636, 67.464, -1.68322 )
 collision_layer = 4
