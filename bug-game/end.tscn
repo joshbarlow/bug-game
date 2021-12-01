@@ -1,0 +1,23 @@
+[gd_scene format=2]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Label" type="Label" parent="."]
+margin_left = 153.0
+margin_top = 88.0
+margin_right = 544.0
+margin_bottom = 191.0
+text = "Congratulations!! You Escaped!"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="."]
+margin_left = 340.0
+margin_top = 166.0
+margin_right = 731.0
+margin_bottom = 269.0
+text = "Thanks for playing!"
+__meta__ = {
+"_edit_use_anchors_": false
+}

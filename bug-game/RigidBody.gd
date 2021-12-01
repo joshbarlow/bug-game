@@ -85,3 +85,7 @@ func _on_Area_body_shape_entered_l2(body_rid, body, body_shape_index, local_shap
 
 func _on_Area_vent_body_shape_entered_l1(body_rid, body, body_shape_index, local_shape_index):
 	get_tree().change_scene("res://level_02.tscn")
+
+
+func _on_Area_body_shape_entered_END(body_rid, body, body_shape_index, local_shape_index):
+	get_tree().change_scene("res://end.tscn")
