@@ -32,6 +32,8 @@ func get_input(_delta):
 		add_torque(Vector3(0,0,-2))
 	if Input.is_action_pressed("ui_left"):
 		add_torque(Vector3(0,0,2))
+	if Input.is_action_pressed("reload"):
+		get_tree().reload_current_scene()
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
