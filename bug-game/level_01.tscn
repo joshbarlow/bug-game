@@ -49,7 +49,7 @@ omni_range = 129.541
 
 [node name="SpotLight" type="SpotLight" parent="."]
 transform = Transform( 0.967374, -0.109044, 0.228686, -0.0459576, 0.812135, 0.581657, -0.24915, -0.573189, 0.780627, 33.8473, 79.579, 72.1461 )
-light_energy = 0.377
+light_energy = 1.632
 shadow_enabled = true
 shadow_bias = 0.4
 spot_range = 190.352
