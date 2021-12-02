@@ -1,5 +1,7 @@
 # bug-game
-My attempt at finishing a game for the 2021 [game off](https://itch.io/jam/game-off-2021) jam
+My attempt at finishing a game for the 2021 [game off](https://itch.io/jam/game-off-2021) jam, also my first time making a game.
+
+You can play the 'finished' game [here](https://joshbarlow.itch.io/flappy)
 
 Current progress - basic controls working:
 
